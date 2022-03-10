@@ -48,7 +48,7 @@ class _ShoppingCartScreenState extends State<ShoppingCartScreen> {
             ),
             actions: [
               Padding(
-                padding: const EdgeInsets.only(right: 40),
+                padding: const EdgeInsets.only(left: 20,right: 20),
                 child: Row(
                   children: [
                     IconButton(
@@ -85,14 +85,17 @@ class _ShoppingCartScreenState extends State<ShoppingCartScreen> {
       drawer: ConstrainedBox(
           constraints: BoxConstraints(maxWidth: 300), child: MyDrawer()),
       body: SingleChildScrollView(
+
         child: Padding(
-          padding: const EdgeInsets.only(right: 80, top: 20),
+          padding: const EdgeInsets.only( top: 20,left: 30,right: 30),
           child: Container(
             child: Column(
+             // mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 SizedBox(height: 20),
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Column(
                       children: [
@@ -231,404 +234,319 @@ class _ShoppingCartScreenState extends State<ShoppingCartScreen> {
                 Container(
                   child: Column(
                     children: [
-                      Padding(
-                        padding: const EdgeInsets.only(left: 45),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              'Your Choice:',
-                              style: GoogleFonts.oswald(
-                                  fontStyle: FontStyle.normal,
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.w500,
-                                  color: Color(0xff000000)),
-                            ),
-                            Padding(
-                              padding: EdgeInsets.only(right: 50),
-                              child: Text(
-                                '2 Items',
-                                style: GoogleFonts.roboto(
-                                    fontStyle: FontStyle.normal,
-                                    fontWeight: FontWeight.w400,
-                                    fontSize: 14,
-                                    color: Color(0xff2A74EB)),
-                              ),
-                            ),
-                          ],
-                        ),
+                      Row(
+                        //crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+
+                          Text(
+                            'Your Choice:',
+                            style: GoogleFonts.oswald(
+                                fontStyle: FontStyle.normal,
+                                fontSize: 18,
+                                fontWeight: FontWeight.w500,
+                                color: Color(0xff000000)),
+                          ),
+                          Spacer(),
+                          Text(
+                            '2 Items',
+                            style: GoogleFonts.roboto(
+                                fontStyle: FontStyle.normal,
+                                fontWeight: FontWeight.w400,
+                                fontSize: 14,
+                                color: Color(0xff2A74EB)),
+                          ),
+                        ],
                       ),
                       SizedBox(height: 10),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 40),
-                        child: Row(
+                      Container(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
-                            Container(
-                              height: 80,
-                              width: 120,
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(15)),
-                              child: Card(
-                                elevation: 0,
-                                color: Color(0xffF6F6F6),
-                              ),
-                            ),
-                            SizedBox(width: 10),
-                            Column(
+                            Row(
                               mainAxisAlignment: MainAxisAlignment.start,
-                              crossAxisAlignment: CrossAxisAlignment.start,
+                              //crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text(
-                                  'AIR JORDAN V RETRO\nWHITE SNEAKERS ',
-                                  overflow: TextOverflow.clip,
-                                  style: GoogleFonts.oswald(
-                                      fontStyle: FontStyle.normal,
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.w700,
-                                      color: Color(0xff000000)),
-                                ),
-                                Row(
-                                  children: [
-                                    Text(
-                                      '\$359',
-                                      style: GoogleFonts.oswald(
-                                          fontSize: 24,
-                                          fontWeight: FontWeight.w500,
-                                          fontStyle: FontStyle.normal,
-                                          color: Color(0xffB10000)),
-                                    ),
-                                     SizedBox(width: 10),
-                                    Container(
-                                      child: SizedBox(
-                                        width: 120,
-                                        child: Container(
-                                            height: 25,
-                                            width: 100,
-                                            decoration: BoxDecoration(
-                                              //border: Border.all(color: Colors.deepOrange),
-                                              // color: Colors.deepOrange,
-                                              borderRadius:
-                                                  BorderRadius.circular(4),
-                                            ),
-                                            child: Row(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.spaceAround,
-                                              children: [
-                                                InkWell(
-                                                  onTap: () {
-                                                    if (count > 1) {
-                                                      setState(() {
-                                                        count--;
-                                                      });
-                                                    }
-                                                    if (count == 1) {
-                                                      setState(() {
-                                                        isTrue = false;
-                                                      });
-                                                    }
-                                                  },
-                                                  child: Icon(
-                                                    Icons.remove,
-                                                    size: 15,
-                                                    color: Colors.black,
-                                                  ),
-                                                ),
-                                                Container(
-                                                  height: 23,
-                                                  width: 23,
-                                                  decoration: BoxDecoration(
-                                                    border: Border.all(
-                                                        color:
-                                                            Color(0xff9D9D9D)),
-                                                  ),
-                                                  child: Center(
-                                                    child: Text(
-                                                      "$count",
-                                                      style: TextStyle(
-                                                          color: Colors.black,
-                                                          fontWeight:
-                                                              FontWeight.bold),
-                                                    ),
-                                                  ),
-                                                ),
-                                                InkWell(
-                                                    onTap: () {
-                                                      setState(() {
-                                                        count++;
-                                                      });
-                                                    },
-                                                    child: Icon(
-                                                      Icons.add,
-                                                      size: 15,
-                                                      color: Colors.black,
-                                                    )),
-                                              ],
-                                            )),
-                                      ),
-                                    ),
-                                  ],
-                                )
-                              ],
-                            ),
-                          ],
-                        ),
-                      ),
-                      SizedBox(height: 10),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 40),
-                        child: Row(
-                          children: [
-                            Container(
-                              height: 80,
-                              width: 120,
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(15)),
-                              child: Card(
-                                elevation: 0,
-                                color: Color(0xffF6F6F6),
-                              ),
-                            ),
-                            SizedBox(width: 10),
-                            Column(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  'LITE RUNNER ORANGE\nBLACK',
-                                  overflow: TextOverflow.clip,
-                                  style: GoogleFonts.oswald(
-                                      fontStyle: FontStyle.normal,
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.w700,
-                                      color: Color(0xff000000)),
-                                ),
-                                Row(
-                                  children: [
-                                    Text(
-                                      '\$329',
-                                      style: GoogleFonts.oswald(
-                                          fontSize: 24,
-                                          fontWeight: FontWeight.w500,
-                                          fontStyle: FontStyle.normal,
-                                          color: Color(0xffB10000)),
-                                    ),
-                                    SizedBox(width: 10),
-                                    Container(
-                                      child: SizedBox(
-                                        width: 120,
-                                        child: Container(
-                                            height: 25,
-                                            width: 100,
-                                            decoration: BoxDecoration(
-                                              borderRadius:
-                                                  BorderRadius.circular(4),
-                                            ),
-                                            child: Row(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.spaceAround,
-                                              children: [
-                                                InkWell(
-                                                  onTap: () {
-                                                    if (count1 > 1) {
-                                                      setState(() {
-                                                        count1--;
-                                                      });
-                                                    }
-                                                    if (count1 == 1) {
-                                                      setState(() {
-                                                        isTrue = false;
-                                                      });
-                                                    }
-                                                  },
-                                                  child: Icon(
-                                                    Icons.remove,
-                                                    size: 15,
-                                                    color: Colors.black,
-                                                  ),
-                                                ),
-                                                Container(
-                                                  height: 23,
-                                                  width: 23,
-                                                  decoration: BoxDecoration(
-                                                    border: Border.all(
-                                                        color:
-                                                            Color(0xff9D9D9D)),
-                                                  ),
-                                                  child: Center(
-                                                    child: Text(
-                                                      "$count1",
-                                                      style: TextStyle(
-                                                          color: Colors.black,
-                                                          fontWeight:
-                                                              FontWeight.bold),
-                                                    ),
-                                                  ),
-                                                ),
-                                                InkWell(
-                                                    onTap: () {
-                                                      setState(() {
-                                                        count1++;
-                                                      });
-                                                    },
-                                                    child: Icon(
-                                                      Icons.add,
-                                                      size: 15,
-                                                      color: Colors.black,
-                                                    )),
-                                              ],
-                                            )),
-                                      ),
-                                    ),
-                                  ],
-                                )
-                              ],
-                            ),
-                          ],
-                        ),
-                      ),
-                      SizedBox(height: 30),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 40),
-                        child: Row(
-                          children: [
-                            Text(
-                              'Promo Code',
-                              style: GoogleFonts.oswald(
-                                  fontStyle: FontStyle.normal,
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.w500,
-                                  color: Color(0xff000000)),
-                            ),
-                          ],
-                        ),
-                      ),
-                      SizedBox(height: 15),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 40),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Container(
-                              height: 48,
-                              width: 189,
-                              decoration: BoxDecoration(
-                                color: Color(0xffF2F2F2),
-                                borderRadius: BorderRadius.circular(30),
-                              ),
-                              child: Align(
-                                  alignment: Alignment.centerLeft,
-                                  child: Padding(
-                                    padding: const EdgeInsets.only(left: 19),
-                                    child: Text(
-                                      '28PA94JID',
-                                      style: GoogleFonts.roboto(
-                                          fontStyle: FontStyle.normal,
-                                          fontWeight: FontWeight.w400,
-                                          color: Color(0xff000000),
-                                          fontSize: 14),
-                                    ),
-                                  )),
-                            ),
-                            Container(
-                              height: 48.0,
-                              child: RaisedButton(
-                                onPressed: () {},
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(90.0)),
-                                padding: EdgeInsets.all(0.0),
-                                child: Ink(
+                                Container(
+                                  height: 80,
+                                  width: 120,
                                   decoration: BoxDecoration(
-                                      gradient: LinearGradient(
-                                        colors: [
-                                          Color(0xff4EC1F5),
-                                          Color(0xff2971EB),
-                                        ],
-                                        begin: Alignment.topCenter,
-                                        end: Alignment.bottomCenter,
-                                      ),
-                                      borderRadius:
-                                          BorderRadius.circular(30.0)),
-                                  child: Container(
-                                    constraints: BoxConstraints(
-                                        maxWidth: 100.0, minHeight: 48.0),
-                                    alignment: Alignment.center,
-                                    child: Text("Enter",
-                                        textAlign: TextAlign.center,
-                                        style: GoogleFonts.oswald(
-                                            fontStyle: FontStyle.normal,
-                                            fontWeight: FontWeight.w400,
-                                            fontSize: 18,
-                                            color: Colors.white)),
+                                      borderRadius: BorderRadius.circular(15)),
+                                  child: Card(
+                                    elevation: 0,
+                                    color: Color(0xffF6F6F6),
                                   ),
                                 ),
-                              ),
+                                SizedBox(width: 10),
+                                Column(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      'AIR JORDAN V RETRO\nWHITE SNEAKERS ',
+                                      overflow: TextOverflow.clip,
+                                      style: GoogleFonts.oswald(
+                                          fontStyle: FontStyle.normal,
+                                          fontSize: 12,
+                                          fontWeight: FontWeight.w700,
+                                          color: Color(0xff000000)),
+                                    ),
+                                    Row(
+                                      // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                      children: [
+                                        Text(
+                                          '\$359',
+                                          style: GoogleFonts.oswald(
+                                              fontSize: 20,
+                                              fontWeight: FontWeight.w500,
+                                              fontStyle: FontStyle.normal,
+                                              color: Color(0xffB10000)),
+                                        ),
+                                        SizedBox(width: 30),
+                                        Container(
+                                          child: SizedBox(
+                                            //width: 120,
+                                            child: Container(
+                                                height: 25,
+                                                width: 100,
+                                                decoration: BoxDecoration(
+                                                  //border: Border.all(color: Colors.deepOrange),
+                                                  // color: Colors.deepOrange,
+                                                  borderRadius:
+                                                  BorderRadius.circular(4),
+                                                ),
+                                                child: Row(
+                                                  mainAxisAlignment:
+                                                  MainAxisAlignment.spaceAround,
+                                                  children: [
+                                                    InkWell(
+                                                      onTap: () {
+                                                        if (count > 1) {
+                                                          setState(() {
+                                                            count--;
+                                                          });
+                                                        }
+                                                        if (count == 1) {
+                                                          setState(() {
+                                                            isTrue = false;
+                                                          });
+                                                        }
+                                                      },
+                                                      child: Icon(
+                                                        Icons.remove,
+                                                        size: 15,
+                                                        color: Colors.black,
+                                                      ),
+                                                    ),
+                                                    Container(
+                                                      height: 23,
+                                                      width: 23,
+                                                      decoration: BoxDecoration(
+                                                        border: Border.all(
+                                                            color:
+                                                            Color(0xff9D9D9D)),
+                                                      ),
+                                                      child: Center(
+                                                        child: Text(
+                                                          "$count",
+                                                          style: TextStyle(
+                                                              color: Colors.black,
+                                                              fontWeight:
+                                                              FontWeight.bold),
+                                                        ),
+                                                      ),
+                                                    ),
+                                                    InkWell(
+                                                        onTap: () {
+                                                          setState(() {
+                                                            count++;
+                                                          });
+                                                        },
+                                                        child: Icon(
+                                                          Icons.add,
+                                                          size: 15,
+                                                          color: Colors.black,
+                                                        )),
+                                                  ],
+                                                )),
+                                          ),
+                                        ),
+                                      ],
+                                    )
+                                  ],
+                                ),
+                              ],
                             ),
+                            SizedBox(height: 10),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              //crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Container(
+                                  height: 80,
+                                  width: 120,
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(15)),
+                                  child: Card(
+                                    elevation: 0,
+                                    color: Color(0xffF6F6F6),
+                                  ),
+                                ),
+                                SizedBox(width: 10),
+                                Column(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      'LITE RUNNER ORANGE\nBLACK ',
+                                      overflow: TextOverflow.clip,
+                                      style: GoogleFonts.oswald(
+                                          fontStyle: FontStyle.normal,
+                                          fontSize: 12,
+                                          fontWeight: FontWeight.w700,
+                                          color: Color(0xff000000)),
+                                    ),
+                                    Row(
+                                      // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                      children: [
+                                        Text(
+                                          '\$329',
+                                          style: GoogleFonts.oswald(
+                                              fontSize: 20,
+                                              fontWeight: FontWeight.w500,
+                                              fontStyle: FontStyle.normal,
+                                              color: Color(0xffB10000)),
+                                        ),
+                                        SizedBox(width: 29),
+                                        Container(
+                                          child: SizedBox(
+                                            //width: 120,
+                                            child: Container(
+                                                height: 25,
+                                                width: 100,
+                                                decoration: BoxDecoration(
+                                                  //border: Border.all(color: Colors.deepOrange),
+                                                  // color: Colors.deepOrange,
+                                                  borderRadius:
+                                                  BorderRadius.circular(4),
+                                                ),
+                                                child: Row(
+                                                  mainAxisAlignment:
+                                                  MainAxisAlignment.spaceAround,
+                                                  children: [
+                                                    InkWell(
+                                                      onTap: () {
+                                                        if (count > 1) {
+                                                          setState(() {
+                                                            count--;
+                                                          });
+                                                        }
+                                                        if (count == 1) {
+                                                          setState(() {
+                                                            isTrue = false;
+                                                          });
+                                                        }
+                                                      },
+                                                      child: Icon(
+                                                        Icons.remove,
+                                                        size: 15,
+                                                        color: Colors.black,
+                                                      ),
+                                                    ),
+                                                    Container(
+                                                      height: 23,
+                                                      width: 23,
+                                                      decoration: BoxDecoration(
+                                                        border: Border.all(
+                                                            color:
+                                                            Color(0xff9D9D9D)),
+                                                      ),
+                                                      child: Center(
+                                                        child: Text(
+                                                          "$count",
+                                                          style: TextStyle(
+                                                              color: Colors.black,
+                                                              fontWeight:
+                                                              FontWeight.bold),
+                                                        ),
+                                                      ),
+                                                    ),
+                                                    InkWell(
+                                                        onTap: () {
+                                                          setState(() {
+                                                            count++;
+                                                          });
+                                                        },
+                                                        child: Icon(
+                                                          Icons.add,
+                                                          size: 15,
+                                                          color: Colors.black,
+                                                        )),
+                                                  ],
+                                                )),
+                                          ),
+                                        ),
+                                      ],
+                                    )
+                                  ],
+                                ),
+                              ],
+                            ),
+
                           ],
                         ),
                       ),
+
+
                       SizedBox(height: 30),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 40, right: 10),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              'Your Sale:',
-                              style: GoogleFonts.roboto(
-                                  fontStyle: FontStyle.normal,
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.w400,
-                                  color: Color(0xff000000)),
-                            ),
-                            Text(
-                              '-\$38,00',
-                              style: GoogleFonts.roboto(
-                                  fontStyle: FontStyle.normal,
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.w700,
-                                  color: Color(0xff000000)),
-                            ),
-                          ],
-                        ),
-                      ),
-                      SizedBox(height: 30),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 40, right: 10),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              'Total Price',
-                              style: GoogleFonts.roboto(
-                                  fontStyle: FontStyle.normal,
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.w400,
-                                  color: Color(0xff000000)),
-                            ),
-                            Text(
-                              '\$650,00',
-                              style: GoogleFonts.roboto(
-                                  fontStyle: FontStyle.normal,
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.w700,
-                                  color: Color(0xff000000)),
-                            ),
-                          ],
-                        ),
-                      ),
-                      SizedBox(height: 50),
-                      Center(
-                        child: Padding(
-                          padding: const EdgeInsets.only(
-                            left: 80,
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Promo Code',
+                            style: GoogleFonts.oswald(
+                                fontStyle: FontStyle.normal,
+                                fontSize: 18,
+                                fontWeight: FontWeight.w500,
+                                color: Color(0xff000000)),
                           ),
-                          child: Container(
+                        ],
+                      ),
+                      SizedBox(height: 15),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                       // crossAxisAlignment: CrossAxisAlignment.end,
+                        children: [
+                          Container(
+                            height: 48,
+                            width: 189,
+                            decoration: BoxDecoration(
+                              color: Color(0xffF2F2F2),
+                              borderRadius: BorderRadius.circular(30),
+                            ),
+                            child: Align(
+                                alignment: Alignment.centerLeft,
+                                child: Padding(
+                                  padding: const EdgeInsets.only(left: 19),
+                                  child: Text(
+                                    '28PA94JID',
+                                    style: GoogleFonts.roboto(
+                                        fontStyle: FontStyle.normal,
+                                        fontWeight: FontWeight.w400,
+                                        color: Color(0xff000000),
+                                        fontSize: 14),
+                                  ),
+                                )),
+                          ),
+                          Spacer(),
+                          Container(
+                           // margin: EdgeInsets.only(right: 10),
+                            height: 48.0,
                             child: RaisedButton(
-                              onPressed: () {
-                                // Navigator.of(context).pushNamed(ShoppingScren.routeName);
-                              },
+                              onPressed: () {},
                               shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(70.0)),
+                                  borderRadius: BorderRadius.circular(90.0)),
                               padding: EdgeInsets.all(0.0),
                               child: Ink(
                                 decoration: BoxDecoration(
@@ -640,24 +558,105 @@ class _ShoppingCartScreenState extends State<ShoppingCartScreen> {
                                       begin: Alignment.topCenter,
                                       end: Alignment.bottomCenter,
                                     ),
-                                    borderRadius: BorderRadius.circular(110.0)),
+                                    borderRadius:
+                                        BorderRadius.circular(30.0)),
                                 child: Container(
                                   constraints: BoxConstraints(
-                                      maxWidth: 324.0, minHeight: 72.0),
+                                      maxWidth: 100.0, minHeight: 48.0),
                                   alignment: Alignment.center,
-                                  child: Text("BUY NOW",
+                                  child: Text("Enter",
                                       textAlign: TextAlign.center,
                                       style: GoogleFonts.oswald(
                                           fontStyle: FontStyle.normal,
-                                          fontWeight: FontWeight.w500,
-                                          fontSize: 24,
+                                          fontWeight: FontWeight.w400,
+                                          fontSize: 18,
                                           color: Colors.white)),
                                 ),
                               ),
                             ),
                           ),
+                        ],
+                      ),
+                      SizedBox(height: 30),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            'Your Sale:',
+                            style: GoogleFonts.roboto(
+                                fontStyle: FontStyle.normal,
+                                fontSize: 18,
+                                fontWeight: FontWeight.w400,
+                                color: Color(0xff000000)),
+                          ),
+                          Text(
+                            '-\$38,00',
+                            style: GoogleFonts.roboto(
+                                fontStyle: FontStyle.normal,
+                                fontSize: 18,
+                                fontWeight: FontWeight.w700,
+                                color: Color(0xff000000)),
+                          ),
+                        ],
+                      ),
+                      SizedBox(height: 30),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            'Total Price',
+                            style: GoogleFonts.roboto(
+                                fontStyle: FontStyle.normal,
+                                fontSize: 18,
+                                fontWeight: FontWeight.w400,
+                                color: Color(0xff000000)),
+                          ),
+                          Text(
+                            '\$650,00',
+                            style: GoogleFonts.roboto(
+                                fontStyle: FontStyle.normal,
+                                fontSize: 18,
+                                fontWeight: FontWeight.w700,
+                                color: Color(0xff000000)),
+                          ),
+                        ],
+                      ),
+                      SizedBox(height: 50),
+                      Container(
+                        child: RaisedButton(
+                          onPressed: () {
+                            // Navigator.of(context).pushNamed(ShoppingScren.routeName);
+                          },
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(70.0)),
+                          padding: EdgeInsets.all(0.0),
+                          child: Ink(
+                            decoration: BoxDecoration(
+                                gradient: LinearGradient(
+                                  colors: [
+                                    Color(0xff4EC1F5),
+                                    Color(0xff2971EB),
+                                  ],
+                                  begin: Alignment.topCenter,
+                                  end: Alignment.bottomCenter,
+                                ),
+                                borderRadius: BorderRadius.circular(110.0)),
+                            child: Container(
+                              constraints: BoxConstraints(
+                                  maxWidth: double.infinity, minHeight: 72.0),
+                              alignment: Alignment.center,
+                              child: Text("BUY NOW",
+                                  textAlign: TextAlign.center,
+                                  style: GoogleFonts.oswald(
+                                      fontStyle: FontStyle.normal,
+                                      fontWeight: FontWeight.w500,
+                                      fontSize: 24,
+                                      color: Colors.white)),
+                            ),
+                          ),
                         ),
                       ),
+                      SizedBox(height: 20),
                     ],
                   ),
                 ),

@@ -26,7 +26,7 @@ class _PaymentState extends State<Payment> {
   bool payment = true;
   bool order = false;
   List<String> image = [
-    "assets/images/Group 615.png",
+    "assets/images/Group 615 (1).png",
     "assets/images/pay.png",
     "assets/images/payment.png",
   ];
@@ -59,7 +59,7 @@ class _PaymentState extends State<Payment> {
             ),
             actions: [
               Padding(
-                padding: const EdgeInsets.only(right: 40),
+                padding: const EdgeInsets.only(left: 40,right: 20),
                 child: Row(
                   children: [
                     IconButton(
@@ -99,148 +99,150 @@ class _PaymentState extends State<Payment> {
         child: Column(
           children: [
 
-            SizedBox(height: 40),
-            Padding(
-              padding: const EdgeInsets.only(left: 36),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Column(
-                    children: [
-                      Text(
-                        'My Cart',
-                        textAlign: TextAlign.center,
-                        style: GoogleFonts.roboto(
-                            fontStyle: FontStyle.normal,
-                            fontWeight: FontWeight.w700,
-                            fontSize: 14,
-                            color: Color(0xff000000)),
-                      ),
-                      SizedBox(height: 10),
-                      InkWell(
-                          onTap: () {
-                            setState(() {
-                              parentAttention = !parentAttention;
-                            });
-                            Navigator.of(context)
-                                .pushNamed(ShoppingCartScreen.routeName);
-                          },
-                          child: CircleAvatar(
-                            backgroundColor: parentAttention
-                                ? Color(0xff2A74EB)
-                                : Color(0xffacd6fe),
-                            radius: 27,
-                            child: Image(
-                                image:
-                                AssetImage('assets/images/Path 81.png'),
-                                color: parentAttention
-                                    ? Color(0xffFFFFFF)
-                                    : Color(0xff2A74EB)),
-                          )),
-                    ],
-                  ),
-                  Column(
-                    children: [
-                      Text(
-                        'Delivery',
-                        textAlign: TextAlign.center,
-                        style: GoogleFonts.roboto(
-                            fontStyle: FontStyle.normal,
-                            fontWeight: FontWeight.w700,
-                            fontSize: 14,
-                            color: Color(0xff000000)),
-                      ),
-                      SizedBox(height: 10),
-                      InkWell(
-                          onTap: () {
-                            // Navigator.of(context)
-                            //     .pushNamed(DeliveryScreen.routeName);
-                            setState(() {
-                              attention = !attention;
-                            });
-                            Navigator.of(context)
-                                .pushNamed(DeliveryScreen.routeName);
-                          },
-                          child: CircleAvatar(
-                            backgroundColor: attention
-                                ? Color(0xff2A74EB)
-                                : Color(0xffacd6fe),
-                            radius: 27,
-                            child: Image(
-                                image: AssetImage('assets/images/pin.png'),
-                                color: attention
-                                    ? Color(0xffFFFFFF)
-                                    : Color(0xff2A74EB)),
-                          )),
-                    ],
-                  ),
-                  Column(
-                    children: [
-                      Text(
-                        'Payment',
-                        textAlign: TextAlign.center,
-                        style: GoogleFonts.roboto(
-                            fontStyle: FontStyle.normal,
-                            fontWeight: FontWeight.w700,
-                            fontSize: 14,
-                            color: Color(0xff000000)),
-                      ),
-                      SizedBox(height: 10),
-                      InkWell(
-                          onTap: () {
-                            Navigator.of(context)
-                                .pushNamed(Payment.routeName);
-                            setState(() {
-                              payment = !payment;
-                            });
-                          },
-                          child: CircleAvatar(
-                            backgroundColor: payment
-                                ? Color(0xff2A74EB)
-                                : Color(0xffacd6fe),
-                            radius: 27,
-                            child: Image(
-                                image: AssetImage('assets/images/g3456.png'),
-                                color: payment
-                                    ? Color(0xffFFFFFF)
-                                    : Color(0xff2A74EB)),
-                          )),
-                    ],
-                  ),
-                  Column(
-                    children: [
-                      Text(
-                        'Order',
-                        textAlign: TextAlign.center,
-                        style: GoogleFonts.roboto(
-                            fontStyle: FontStyle.normal,
-                            fontWeight: FontWeight.w700,
-                            fontSize: 14,
-                            color: Color(0xff000000)),
-                      ),
-                      SizedBox(height: 10),
-                      InkWell(
-                          onTap: () {
-                            Navigator.of(context).pushNamed(SubmitOrderScreen.routeName);
-                            setState(() {
-                              order = !order;
-                            });
 
-                          },
-                          child: CircleAvatar(
-                            backgroundColor:
-                            order ? Color(0xff2A74EB) : Color(0xffacd6fe),
-                            radius: 27,
-                            child: Image(
-                                image:
-                                AssetImage('assets/images/Path 89.png'),
-                                color: order
-                                    ? Color(0xffFFFFFF)
-                                    : Color(0xff2A74EB)),
-                          )),
-                    ],
-                  ),
-                ],
+            Padding(
+              padding: const EdgeInsets.only( top: 20,left: 30,right: 30),
+              child: Container(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Column(
+                      children: [
+                        Text(
+                          'My Cart',
+                          textAlign: TextAlign.center,
+                          style: GoogleFonts.roboto(
+                              fontStyle: FontStyle.normal,
+                              fontWeight: FontWeight.w700,
+                              fontSize: 14,
+                              color: Color(0xff000000)),
+                        ),
+                        SizedBox(height: 10),
+                        InkWell(
+                            onTap: () {
+                              setState(() {
+                                parentAttention = !parentAttention;
+                              });
+                              Navigator.of(context)
+                                  .pushNamed(ShoppingCartScreen.routeName);
+                            },
+                            child: CircleAvatar(
+                              backgroundColor: parentAttention
+                                  ? Color(0xff2A74EB)
+                                  : Color(0xffacd6fe),
+                              radius: 27,
+                              child: Image(
+                                  image:
+                                  AssetImage('assets/images/Path 81.png'),
+                                  color: parentAttention
+                                      ? Color(0xffFFFFFF)
+                                      : Color(0xff2A74EB)),
+                            )),
+                      ],
+                    ),
+                    Column(
+                      children: [
+                        Text(
+                          'Delivery',
+                          textAlign: TextAlign.center,
+                          style: GoogleFonts.roboto(
+                              fontStyle: FontStyle.normal,
+                              fontWeight: FontWeight.w700,
+                              fontSize: 14,
+                              color: Color(0xff000000)),
+                        ),
+                        SizedBox(height: 10),
+                        InkWell(
+                            onTap: () {
+                              // Navigator.of(context)
+                              //     .pushNamed(DeliveryScreen.routeName);
+                              setState(() {
+                                attention = !attention;
+                              });
+                              Navigator.of(context)
+                                  .pushNamed(DeliveryScreen.routeName);
+                            },
+                            child: CircleAvatar(
+                              backgroundColor: attention
+                                  ? Color(0xff2A74EB)
+                                  : Color(0xffacd6fe),
+                              radius: 27,
+                              child: Image(
+                                  image: AssetImage('assets/images/pin.png'),
+                                  color: attention
+                                      ? Color(0xffFFFFFF)
+                                      : Color(0xff2A74EB)),
+                            )),
+                      ],
+                    ),
+                    Column(
+                      children: [
+                        Text(
+                          'Payment',
+                          textAlign: TextAlign.center,
+                          style: GoogleFonts.roboto(
+                              fontStyle: FontStyle.normal,
+                              fontWeight: FontWeight.w700,
+                              fontSize: 14,
+                              color: Color(0xff000000)),
+                        ),
+                        SizedBox(height: 10),
+                        InkWell(
+                            onTap: () {
+
+                              setState(() {
+                                payment = !payment;
+                              });
+                            },
+                            child: CircleAvatar(
+                              backgroundColor: payment
+                                  ? Color(0xff2A74EB)
+                                  : Color(0xffacd6fe),
+                              radius: 27,
+                              child: Image(
+                                  image: AssetImage('assets/images/g3456.png'),
+                                  color: payment
+                                      ? Color(0xffFFFFFF)
+                                      : Color(0xff2A74EB)),
+                            )),
+                      ],
+                    ),
+                    Column(
+                      children: [
+                        Text(
+                          'Order',
+                          textAlign: TextAlign.center,
+                          style: GoogleFonts.roboto(
+                              fontStyle: FontStyle.normal,
+                              fontWeight: FontWeight.w700,
+                              fontSize: 14,
+                              color: Color(0xff000000)),
+                        ),
+                        SizedBox(height: 10),
+                        InkWell(
+                            onTap: () {
+                              Navigator.of(context).pushNamed(SubmitOrderScreen.routeName);
+                              setState(() {
+                                order = !order;
+                              });
+
+                            },
+                            child: CircleAvatar(
+                              backgroundColor:
+                              order ? Color(0xff2A74EB) : Color(0xffacd6fe),
+                              radius: 27,
+                              child: Image(
+                                  image:
+                                  AssetImage('assets/images/Path 89.png'),
+                                  color: order
+                                      ? Color(0xffFFFFFF)
+                                      : Color(0xff2A74EB)),
+                            )),
+                      ],
+                    ),
+                  ],
+                ),
               ),
             ),
             SizedBox(height: 30),
@@ -260,137 +262,147 @@ class _PaymentState extends State<Payment> {
                   return _buildContainer(index);
                 }),
             Padding(
-              padding: const EdgeInsets.only(left: 36, top: 30),
-              child: Row(
-                children: [
-                  Text("Cart Details",
-                      style: GoogleFonts.oswald(
-                          fontSize: 18, fontWeight: FontWeight.bold))
-                ],
-              ),
-            ),
-            SizedBox(height: 12),
-            Container(
-              height: 48,
-              width: 307,
-              decoration: BoxDecoration(
-                color: Color(0xFFF6F6F6),
-                borderRadius: BorderRadius.all(Radius.circular(50)),
-              ),
-              child: Padding(
-                padding: const EdgeInsets.only(left: 27, top: 16, bottom: 16),
-                child: Text("Mike Joe",
-                    style: GoogleFonts.roboto(
-                        fontSize: 14, fontWeight: FontWeight.w500)),
-              ),
-            ),
-            SizedBox(height: 12),
-            Container(
-              height: 48,
-              width: 307,
-              decoration: BoxDecoration(
-                color: Color(0xFFF6F6F6),
-                borderRadius: BorderRadius.all(Radius.circular(50)),
-              ),
-              child: Padding(
-                padding: const EdgeInsets.only(left: 27, top: 16, bottom: 16),
-                child: Text("8027 - 5610 - 8832 - 1987",
-                    style: GoogleFonts.roboto(
-                        fontSize: 14, fontWeight: FontWeight.w500)),
-              ),
-            ),
-            SizedBox(height: 12),
-            Padding(
-              padding: const EdgeInsets.only(left: 36, right: 36),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Flexible(
-                    child: Container(
+              padding: const EdgeInsets.only( top: 30,left: 30,right: 30),
+              child: Container(
+                child: Column(
+                  children: [
+                    Row(
+                      children: [
+                        Text("Cart Details",
+                            style: GoogleFonts.oswald(
+                                fontSize: 18, fontWeight: FontWeight.bold))
+                      ],
+                    ),
+                    SizedBox(height: 12),
+                    Container(
                       height: 48,
-                      width: 142,
+                      width: double.infinity,
                       decoration: BoxDecoration(
                         color: Color(0xFFF6F6F6),
                         borderRadius: BorderRadius.all(Radius.circular(50)),
                       ),
                       child: Padding(
-                        padding: const EdgeInsets.only(
-                            left: 27, top: 16, bottom: 16),
-                        child: Text("09/2021",
+                        padding: const EdgeInsets.only(left: 27, top: 16, bottom: 16),
+                        child: Text("Mike Joe",
                             style: GoogleFonts.roboto(
                                 fontSize: 14, fontWeight: FontWeight.w500)),
                       ),
                     ),
-                  ),
-                  //  SizedBox(width: 25,),
-                  Flexible(
-                    child: Container(
+                    SizedBox(height: 12),
+                    Container(
                       height: 48,
-                      width: 142,
+                      width: double.infinity,
                       decoration: BoxDecoration(
                         color: Color(0xFFF6F6F6),
                         borderRadius: BorderRadius.all(Radius.circular(50)),
                       ),
                       child: Padding(
-                        padding: const EdgeInsets.only(
-                            left: 27, top: 16, bottom: 16),
-                        child: Text("18362",
+                        padding: const EdgeInsets.only(left: 27, top: 16, bottom: 16),
+                        child: Text("8027 - 5610 - 8832 - 1987",
                             style: GoogleFonts.roboto(
                                 fontSize: 14, fontWeight: FontWeight.w500)),
                       ),
                     ),
-                  ),
-                ],
-              ),
-            ),
-            SizedBox(height: 27),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                FlutterSwitch(
-                  height: 20,
-                  width: 40,
-                  toggleSize: 15,
-                  value: _show,
-                  onToggle: (bool value) {
-                    setState(() {
-                      _show = !_show;
-                    });
-                  },
-                ),
-                Text("Save Credit Card Information",
-                    style: GoogleFonts.roboto(
-                        fontSize: 14, fontWeight: FontWeight.w500)),
-              ],
-            ),
-            SizedBox(height: 60),
-            Container(
-              height: 72,
-              width: 303,
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  colors: [
-                    Color(0xFF4EC1F5),
-                    Color(0xFF2971EB),
+                    SizedBox(height: 12),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Container(
+                          height: 48,
+                          width: 142,
+                          decoration: BoxDecoration(
+                            color: Color(0xFFF6F6F6),
+                            borderRadius: BorderRadius.all(Radius.circular(50)),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.only(
+                                left: 27, top: 16, bottom: 16),
+                            child: Text("09/2021",
+                                style: GoogleFonts.roboto(
+                                    fontSize: 14, fontWeight: FontWeight.w500)),
+                          ),
+                        ),
+                       Spacer(),
+                        Container(
+                          height: 48,
+                          width: 142,
+                          decoration: BoxDecoration(
+                            color: Color(0xFFF6F6F6),
+                            borderRadius: BorderRadius.all(Radius.circular(50)),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.only(
+                                left: 27, top: 16, bottom: 16),
+                            child: Text("18362",
+                                style: GoogleFonts.roboto(
+                                    fontSize: 14, fontWeight: FontWeight.w500)),
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: 27),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        FlutterSwitch(
+                          height: 20,
+                          width: 40,
+                          toggleSize: 15,
+                          value: _show,
+                          onToggle: (bool value) {
+                            setState(() {
+                              _show = !_show;
+                            });
+                          },
+                        ),
+
+                        Text("Save Credit Card Information",
+                            style: GoogleFonts.roboto(
+                                fontSize: 14, fontWeight: FontWeight.w500)),
+                      ],
+                    ),
+                    SizedBox(height: 60),
+                    Container(
+                      child: RaisedButton(
+                        onPressed: () {
+                          // Navigator.of(context).pushNamed(ShoppingScren.routeName);
+                        },
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(70.0)),
+                        padding: EdgeInsets.all(0.0),
+                        child: Ink(
+                          decoration: BoxDecoration(
+                              gradient: LinearGradient(
+                                colors: [
+                                  Color(0xff4EC1F5),
+                                  Color(0xff2971EB),
+                                ],
+                                begin: Alignment.topCenter,
+                                end: Alignment.bottomCenter,
+                              ),
+                              borderRadius: BorderRadius.circular(110.0)),
+                          child: Container(
+                            constraints: BoxConstraints(
+                                maxWidth: double.infinity, minHeight: 72.0),
+                            alignment: Alignment.center,
+                            child: Text("NEXT STEP",
+                                textAlign: TextAlign.center,
+                                style: GoogleFonts.oswald(
+                                    fontStyle: FontStyle.normal,
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: 24,
+                                    color: Colors.white)),
+                          ),
+                        ),
+                      ),
+                    ),
+                    SizedBox(height: 20),
                   ],
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter,
-                ),
-                borderRadius: BorderRadius.all(Radius.circular(80.0)),
-              ),
-              child: InkWell(
-                onTap: () {},
-                child: Center(
-                  child: Text(
-                    'NEXT STEP',
-                    style: GoogleFonts.oswald(
-                        fontSize: 24,
-                        color: Colors.white,
-                        fontWeight: FontWeight.w500),
-                  ),
                 ),
               ),
             ),
+
           ],
         ),
       ),

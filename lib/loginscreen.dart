@@ -28,7 +28,7 @@ class _LoginScreenState extends State<LoginScreen> {
               CarouselSlider.builder(
                   options: CarouselOptions(
                     height: 414,
-                    viewportFraction: 0.5,
+                    viewportFraction: 0.6,
                     autoPlay: true,
                     reverse: true,
                     enlargeStrategy: CenterPageEnlargeStrategy.height,
@@ -194,32 +194,34 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
               ),
               SizedBox(
-                height: 27,
+                height: 18,
               ),
-              Padding(
-                padding: const EdgeInsets.only(left: 83.08, right: 83.08),
-                child: Row(
-                  children: [
-                    Text("Don't have an account?",
-                        style: GoogleFonts.openSans(
-                            fontSize: 14,
-                            fontWeight: FontWeight.normal,
-                            color: Colors.black)),
-                    SizedBox(
-                      width: 1,
-                    ),
-                    InkWell(
-                        onTap: () {
-                          Navigator.of(context).pushNamed(ShoppingScren.routeName);
-                        },
-                        child: Text("Sing Up",
-                            style: GoogleFonts.openSans(
-                                fontSize: 14,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.blue))),
-                  ],
-                ),
-              )
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text("Don't have an account?",
+                      style: GoogleFonts.openSans(
+                          fontSize: 14,
+                          fontWeight: FontWeight.normal,
+                          color: Colors.black)),
+                  SizedBox(
+                    width: 2,
+                  ),
+                  InkWell(
+                      onTap: () {
+                        Navigator.of(context).pushNamed(ShoppingScren.routeName);
+                      },
+                      child: Text("Sing Up",
+                          style: GoogleFonts.openSans(
+                              fontSize: 14,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.blue))),
+
+                ],
+              ),
+              SizedBox(
+                height: 18,
+              ),
             ],
           ),
         ),

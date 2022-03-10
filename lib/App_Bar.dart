@@ -31,7 +31,7 @@ class _AppBarScreenState extends State<AppBarScreen> {
         ),
         actions: [
           Padding(
-            padding: const EdgeInsets.only(right: 40),
+            padding: const EdgeInsets.only(left: 40,right: 20),
             child: Row(
               children: [
                 IconButton(

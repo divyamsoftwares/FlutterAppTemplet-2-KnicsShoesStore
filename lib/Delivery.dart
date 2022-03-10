@@ -44,7 +44,7 @@ class _DeliveryScreenState extends State<DeliveryScreen> {
             ),
             actions: [
               Padding(
-                padding: const EdgeInsets.only(right: 40),
+                padding: const EdgeInsets.only(left: 40,right: 20),
                 child: Row(
                   children: [
                     IconButton(
@@ -82,13 +82,14 @@ class _DeliveryScreenState extends State<DeliveryScreen> {
           constraints: BoxConstraints(maxWidth: 300), child: MyDrawer()),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.only(right: 80, top: 20),
+          padding: const EdgeInsets.only( top: 20,left: 30,right: 30),
           child: Container(
             child: Column(
               children: [
                 SizedBox(height: 20),
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Column(
                       children: [
@@ -230,24 +231,67 @@ class _DeliveryScreenState extends State<DeliveryScreen> {
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Padding(
-                        padding: const EdgeInsets.only(left: 39),
-                        child: Text(
-                          'Contact',
-                          style: GoogleFonts.oswald(
-                              fontStyle: FontStyle.normal,
-                              fontSize: 18,
-                              fontWeight: FontWeight.w500,
-                              color: Color(0xff000000)),
-                        ),
+                      Text(
+                        'Contact',
+                        style: GoogleFonts.oswald(
+                            fontStyle: FontStyle.normal,
+                            fontSize: 18,
+                            fontWeight: FontWeight.w500,
+                            color: Color(0xff000000)),
                       ),
                       SizedBox(height: 10),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 39),
-                        child: TextFormField(
-                          cursorColor: Colors.black,
+                      TextFormField(
+                        cursorColor: Colors.black,
 
-                          decoration: InputDecoration(
+                        decoration: InputDecoration(
+                          border: InputBorder.none,
+
+                          focusedBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(25),
+                              borderSide: BorderSide(color: Colors.transparent)
+                          ),
+                          enabledBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(25),
+                              borderSide: BorderSide(color: Colors.transparent)
+                          ),
+                          focusColor: Color(0xffF6F6F6),
+
+                          fillColor: Color(0xffF6F6F6),
+                          filled: true,
+                          //labelText: 'User Name',
+                          hintText: '    Full Name',
+                          hintStyle: GoogleFonts.roboto(fontStyle: FontStyle.normal,fontWeight: FontWeight.w400,fontSize: 14,color: Color(0xff0000000)),
+                        ),
+
+                      ),
+                      SizedBox(height: 10),
+                      TextFormField(
+                        cursorColor: Colors.black,
+                        decoration: InputDecoration(
+                          border: InputBorder.none,
+
+                          focusedBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(25),
+                              borderSide: BorderSide(color: Colors.transparent)
+                          ),
+                          enabledBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(25),
+                              borderSide: BorderSide(color: Colors.transparent)
+                          ),
+                          focusColor: Color(0xffF6F6F6),
+
+                          fillColor: Color(0xffF6F6F6),
+                          filled: true,
+                          //labelText: 'User Name',
+                          hintText: '    Your email',
+                            hintStyle: GoogleFonts.roboto(fontStyle: FontStyle.normal,fontWeight: FontWeight.w400,fontSize: 14,color: Color(0xff0000000))
+                        ),
+
+                      ),
+                      SizedBox(height: 10),
+                      TextFormField(
+                        cursorColor: Colors.black,
+                        decoration: InputDecoration(
                             border: InputBorder.none,
 
                             focusedBorder: OutlineInputBorder(
@@ -263,65 +307,10 @@ class _DeliveryScreenState extends State<DeliveryScreen> {
                             fillColor: Color(0xffF6F6F6),
                             filled: true,
                             //labelText: 'User Name',
-                            hintText: '    Full Name',
-                            hintStyle: GoogleFonts.roboto(fontStyle: FontStyle.normal,fontWeight: FontWeight.w400,fontSize: 14,color: Color(0xff0000000)),
-                          ),
-
+                            hintText: '    Your Phone Number',
+                            hintStyle: GoogleFonts.roboto(fontStyle: FontStyle.normal,fontWeight: FontWeight.w400,fontSize: 14,color: Color(0xff0000000))
                         ),
-                      ),
-                      SizedBox(height: 10),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 39),
-                        child: TextFormField(
-                          cursorColor: Colors.black,
-                          decoration: InputDecoration(
-                            border: InputBorder.none,
 
-                            focusedBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(25),
-                                borderSide: BorderSide(color: Colors.transparent)
-                            ),
-                            enabledBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(25),
-                                borderSide: BorderSide(color: Colors.transparent)
-                            ),
-                            focusColor: Color(0xffF6F6F6),
-
-                            fillColor: Color(0xffF6F6F6),
-                            filled: true,
-                            //labelText: 'User Name',
-                            hintText: '    Your email',
-                              hintStyle: GoogleFonts.roboto(fontStyle: FontStyle.normal,fontWeight: FontWeight.w400,fontSize: 14,color: Color(0xff0000000))
-                          ),
-
-                        ),
-                      ),
-                      SizedBox(height: 10),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 39),
-                        child: TextFormField(
-                          cursorColor: Colors.black,
-                          decoration: InputDecoration(
-                              border: InputBorder.none,
-
-                              focusedBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(25),
-                                  borderSide: BorderSide(color: Colors.transparent)
-                              ),
-                              enabledBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(25),
-                                  borderSide: BorderSide(color: Colors.transparent)
-                              ),
-                              focusColor: Color(0xffF6F6F6),
-
-                              fillColor: Color(0xffF6F6F6),
-                              filled: true,
-                              //labelText: 'User Name',
-                              hintText: '    Your Phone Number',
-                              hintStyle: GoogleFonts.roboto(fontStyle: FontStyle.normal,fontWeight: FontWeight.w400,fontSize: 14,color: Color(0xff0000000))
-                          ),
-
-                        ),
                       ),
                     ],
                   ),
@@ -332,23 +321,42 @@ class _DeliveryScreenState extends State<DeliveryScreen> {
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Padding(
-                        padding: const EdgeInsets.only(left: 39),
-                        child: Text(
-                          'Address',
-                          style: GoogleFonts.oswald(
-                              fontStyle: FontStyle.normal,
-                              fontSize: 18,
-                              fontWeight: FontWeight.w500,
-                              color: Color(0xff000000)),
-                        ),
+                      Text(
+                        'Address',
+                        style: GoogleFonts.oswald(
+                            fontStyle: FontStyle.normal,
+                            fontSize: 18,
+                            fontWeight: FontWeight.w500,
+                            color: Color(0xff000000)),
                       ),
                       SizedBox(height: 10),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 39),
-                        child: TextFormField(
-                          cursorColor: Colors.black,
-                          decoration: InputDecoration(
+                      TextFormField(
+                        cursorColor: Colors.black,
+                        decoration: InputDecoration(
+                          border: InputBorder.none,
+
+                          focusedBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(25),
+                              borderSide: BorderSide(color: Colors.transparent)
+                          ),
+                          enabledBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(25),
+                              borderSide: BorderSide(color: Colors.transparent)
+                          ),
+                          focusColor: Color(0xffF6F6F6),
+
+                          fillColor: Color(0xffF6F6F6),
+                          filled: true,
+                          //labelText: 'User Name',
+                          hintText: '    Your Country',
+                          hintStyle: GoogleFonts.roboto(fontStyle: FontStyle.normal,fontWeight: FontWeight.w400,fontSize: 14,color: Color(0xff0000000)),
+                        ),
+
+                      ),
+                      SizedBox(height: 10),
+                      TextFormField(
+                        cursorColor: Colors.black,
+                        decoration: InputDecoration(
                             border: InputBorder.none,
 
                             focusedBorder: OutlineInputBorder(
@@ -364,102 +372,67 @@ class _DeliveryScreenState extends State<DeliveryScreen> {
                             fillColor: Color(0xffF6F6F6),
                             filled: true,
                             //labelText: 'User Name',
-                            hintText: '    Your Country',
-                            hintStyle: GoogleFonts.roboto(fontStyle: FontStyle.normal,fontWeight: FontWeight.w400,fontSize: 14,color: Color(0xff0000000)),
-                          ),
-
+                            hintText: '   Street Detail',
+                            hintStyle: GoogleFonts.roboto(fontStyle: FontStyle.normal,fontWeight: FontWeight.w400,fontSize: 14,color: Color(0xff0000000))
                         ),
+
                       ),
                       SizedBox(height: 10),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 39),
-                        child: TextFormField(
-                          cursorColor: Colors.black,
-                          decoration: InputDecoration(
-                              border: InputBorder.none,
+                      TextFormField(
+                        cursorColor: Colors.black,
+                        decoration: InputDecoration(
+                            border: InputBorder.none,
 
-                              focusedBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(25),
-                                  borderSide: BorderSide(color: Colors.transparent)
-                              ),
-                              enabledBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(25),
-                                  borderSide: BorderSide(color: Colors.transparent)
-                              ),
-                              focusColor: Color(0xffF6F6F6),
+                            focusedBorder: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(25),
+                                borderSide: BorderSide(color: Colors.transparent)
+                            ),
+                            enabledBorder: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(25),
+                                borderSide: BorderSide(color: Colors.transparent)
+                            ),
+                            focusColor: Color(0xffF6F6F6),
 
-                              fillColor: Color(0xffF6F6F6),
-                              filled: true,
-                              //labelText: 'User Name',
-                              hintText: '   Street Detail',
-                              hintStyle: GoogleFonts.roboto(fontStyle: FontStyle.normal,fontWeight: FontWeight.w400,fontSize: 14,color: Color(0xff0000000))
-                          ),
-
+                            fillColor: Color(0xffF6F6F6),
+                            filled: true,
+                            //labelText: 'User Name',
+                            hintText: '    Post Code',
+                            hintStyle: GoogleFonts.roboto(fontStyle: FontStyle.normal,fontWeight: FontWeight.w400,fontSize: 14,color: Color(0xff0000000))
                         ),
-                      ),
-                      SizedBox(height: 10),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 39),
-                        child: TextFormField(
-                          cursorColor: Colors.black,
-                          decoration: InputDecoration(
-                              border: InputBorder.none,
 
-                              focusedBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(25),
-                                  borderSide: BorderSide(color: Colors.transparent)
-                              ),
-                              enabledBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(25),
-                                  borderSide: BorderSide(color: Colors.transparent)
-                              ),
-                              focusColor: Color(0xffF6F6F6),
-
-                              fillColor: Color(0xffF6F6F6),
-                              filled: true,
-                              //labelText: 'User Name',
-                              hintText: '    Post Code',
-                              hintStyle: GoogleFonts.roboto(fontStyle: FontStyle.normal,fontWeight: FontWeight.w400,fontSize: 14,color: Color(0xff0000000))
-                          ),
-
-                        ),
                       ),
                       SizedBox(height: 30),
-                      Center(
-                        child: Padding(
-                          padding: const EdgeInsets.only(left: 70,),
-                          child: Container(
-                            height: 72.0,
+                      Container(
+                        height: 72.0,
 
-                            child: RaisedButton(
-                              onPressed: () {
+                        child: RaisedButton(
+                          onPressed: () {
 
-                              },
-                              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(80.0)),
-                              padding: EdgeInsets.all(0.0),
-                              child: Ink(
-                                decoration: BoxDecoration(
-                                    gradient: LinearGradient(colors: [Color(0xff4EC1F5),Color(0xff2971EB), ],
-                                      begin: Alignment.topCenter,
-                                      end: Alignment.bottomCenter,
+                          },
+                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(80.0)),
+                          padding: EdgeInsets.all(0.0),
+                          child: Ink(
+                            decoration: BoxDecoration(
+                                gradient: LinearGradient(colors: [Color(0xff4EC1F5),Color(0xff2971EB), ],
+                                  begin: Alignment.topCenter,
+                                  end: Alignment.bottomCenter,
 
-                                    ),
-                                    borderRadius: BorderRadius.circular(110.0)
                                 ),
-                                child: Container(
-                                  constraints: BoxConstraints(maxWidth: 324.0, minHeight: 50.0),
-                                  alignment: Alignment.center,
-                                  child: Text(
-                                      "NEXT STEP",
-                                      textAlign: TextAlign.center,
-                                      style: GoogleFonts.oswald(fontStyle: FontStyle.normal,fontWeight: FontWeight.w500,fontSize: 24,color: Colors.white)
-                                  ),
-                                ),
+                                borderRadius: BorderRadius.circular(110.0)
+                            ),
+                            child: Container(
+                              constraints: BoxConstraints(maxWidth: double.infinity, minHeight: 50.0),
+                              alignment: Alignment.center,
+                              child: Text(
+                                  "NEXT STEP",
+                                  textAlign: TextAlign.center,
+                                  style: GoogleFonts.oswald(fontStyle: FontStyle.normal,fontWeight: FontWeight.w500,fontSize: 24,color: Colors.white)
                               ),
                             ),
                           ),
                         ),
                       ),
+                      SizedBox(height: 20),
                     ],
                   ),
                 ),

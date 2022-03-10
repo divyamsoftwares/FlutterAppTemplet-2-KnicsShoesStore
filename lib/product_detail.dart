@@ -47,7 +47,7 @@ class _ProductDetailState extends State<ProductDetail>
             ),
             actions: [
               Padding(
-                padding: const EdgeInsets.only(right: 40),
+                padding: const EdgeInsets.only(left: 40,right: 20),
                 child: Row(
                   children: [
                     IconButton(
@@ -89,40 +89,43 @@ class _ProductDetailState extends State<ProductDetail>
           children: [
 
             SizedBox(height: 46),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+            Padding(
+              padding: const EdgeInsets.only( left: 30,right: 30),
+              child: Container(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+
                   children: [
-                    Text(
-                      "Air Jordan V Retro",
-                      style: GoogleFonts.oswald(
-                          fontSize: 24, fontWeight: FontWeight.bold),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "Air Jordan V Retro",
+                          style: GoogleFonts.oswald(
+                              fontSize: 24, fontWeight: FontWeight.bold),
+                        ),
+                        Text("\$359",
+                            style: GoogleFonts.oswald(
+                                fontSize: 24,
+                                fontWeight: FontWeight.bold,
+                                color: Color(0xFFB10000))),
+                      ],
                     ),
-                    Text("\$359",
-                        style: GoogleFonts.oswald(
-                            fontSize: 24,
-                            fontWeight: FontWeight.bold,
-                            color: Color(0xFFB10000))),
+                    CircleAvatar(
+                      radius: 18,
+                      backgroundColor: Color(0xFFF2F2F2),
+                      child: IconButton(
+                        onPressed: () {},
+                        icon: Icon(
+                          Icons.favorite_rounded,
+                          color: Colors.red,
+                          size: 20,
+                        ),
+                      ),
+                    )
                   ],
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 10, right: 36),
-                  child: CircleAvatar(
-                    radius: 18,
-                    backgroundColor: Color(0xFFF2F2F2),
-                    child: IconButton(
-                      onPressed: () {},
-                      icon: Icon(
-                        Icons.favorite_rounded,
-                        color: Colors.red,
-                        size: 20,
-                      ),
-                    ),
-                  ),
-                )
-              ],
+              ),
             ),
             SizedBox(height: 8),
             CarouselSlider.builder(
@@ -141,300 +144,297 @@ class _ProductDetailState extends State<ProductDetail>
                   return _buildContainer(index);
                 }),
             SizedBox(height: 16),
-            Positioned(
-                left: 41.07,
-                right: 56.8,
-                top: 57.51,
-                bottom: 41.5,
-                child: buildIndicator()),
             Padding(
-              padding: const EdgeInsets.only(left: 36, top: 20),
-              child: Row(
-                children: [
-                  Text(
-                    "COLOR",
-                    style: GoogleFonts.oswald(
-                        fontSize: 18, fontWeight: FontWeight.bold),
-                  ),
-                ],
-              ),
-            ),
-            SizedBox(height: 8),
-            Row(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(left: 36),
-                  child: CircleAvatar(
-                    radius: 22,
-                    backgroundColor: Colors.red.shade50,
-                    child: Container(
-                      height: 32,
-                      width: 32,
-                      decoration: BoxDecoration(
-                        color: Color(0xFFFF0000),
-                        borderRadius: BorderRadius.all(Radius.circular(50)),
+              padding: const EdgeInsets.only( left: 30,right: 30),
+              child: Container(
+                child: Column(
+                  children: [
+                    Positioned(
+                        left: 41.07,
+                        right: 56.8,
+                        top: 57.51,
+                        bottom: 41.5,
+                        child: buildIndicator()),
+                    Row(
+                      children: [
+                        Text(
+                          "COLOR",
+                          style: GoogleFonts.oswald(
+                              fontSize: 18, fontWeight: FontWeight.bold),
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: 8),
+                    Row(
+                      children: [
+                        CircleAvatar(
+                          radius: 22,
+                          backgroundColor: Colors.red.shade50,
+                          child: Container(
+                            height: 32,
+                            width: 32,
+                            decoration: BoxDecoration(
+                              color: Color(0xFFFF0000),
+                              borderRadius: BorderRadius.all(Radius.circular(50)),
+                            ),
+                          ),
+                        ),
+                        SizedBox(width: 15),
+                        Container(
+                          height: 32,
+                          width: 32,
+                          decoration: BoxDecoration(
+                            color: Color(0xFFFF9CD4),
+                            borderRadius: BorderRadius.all(Radius.circular(50)),
+                          ),
+                        ),
+                        SizedBox(width: 15),
+                        Container(
+                          height: 32,
+                          width: 32,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.all(Radius.circular(50)),
+                              //boxShadow:[ BoxShadow(color: Colors.red, blurRadius: 9,),],
+                              border: Border.all(color: Colors.black)),
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      height: 15,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          "SIZE",
+                          style: GoogleFonts.oswald(
+                              fontSize: 18, fontWeight: FontWeight.bold),
+                        ),
+                        Text(
+                          "Size Guide",
+                          style: GoogleFonts.roboto(
+                              fontSize: 14,
+                              fontWeight: FontWeight.bold,
+                              color: Color(0xFF2A74EB)),
+                        ),
+                      ],
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        InkWell(
+                          onTap: () {
+                            setState(() => pressAttention = !pressAttention);
+                          },
+                          child: Container(
+                            height: 48,
+                            width: 48,
+                            decoration: BoxDecoration(
+                              color: pressAttention ? Colors.blue : Color(0xFFF6F6F6),
+                              //  color: Color(0xFFF6F6F6),
+                              borderRadius: BorderRadius.all(Radius.circular(50)),
+                            ),
+                            child: Center(
+                                child: Text('8',
+                                    style: pressAttention
+                                        ? GoogleFonts.oswald(
+                                        fontSize: 24,
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.white)
+                                        : GoogleFonts.oswald(
+                                        fontSize: 24,
+                                        fontWeight: FontWeight.bold))),
+                          ),
+                        ),
+                        // SizedBox(width: 15),
+                        InkWell(
+                          onTap: () {
+                            setState(() => press = !press);
+                          },
+                          child: Container(
+                            height: 48,
+                            width: 48,
+                            decoration: BoxDecoration(
+                              color: press ? Colors.blue : Color(0xFFF6F6F6),
+                              //  color: Color(0xFFF6F6F6),
+                              borderRadius: BorderRadius.all(Radius.circular(50)),
+                            ),
+                            child: Center(
+                                child: Text('8.5',
+                                    style: press
+                                        ? GoogleFonts.oswald(
+                                        fontSize: 24,
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.white)
+                                        : GoogleFonts.oswald(
+                                        fontSize: 24,
+                                        fontWeight: FontWeight.bold))),
+                          ),
+                        ),
+                        // SizedBox(width: 15),
+                        InkWell(
+                          onTap: () {
+                            setState(() => Attention = !Attention);
+                          },
+                          child: Container(
+                            height: 48,
+                            width: 48,
+                            decoration: BoxDecoration(
+                              color: Attention ? Colors.blue : Color(0xFFF6F6F6),
+                              borderRadius: BorderRadius.all(Radius.circular(50)),
+                            ),
+                            child: Center(
+                                child: Text('9',
+                                    style: Attention
+                                        ? GoogleFonts.oswald(
+                                        fontSize: 24,
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.white)
+                                        : GoogleFonts.oswald(
+                                        fontSize: 24,
+                                        fontWeight: FontWeight.bold))),
+                          ),
+                        ),
+                        //SizedBox(width: 15),
+                        InkWell(
+                          onTap: () {
+                            setState(() => select = !select);
+                          },
+                          child: Container(
+                            height: 48,
+                            width: 48,
+                            decoration: BoxDecoration(
+                              color: select ? Colors.blue : Color(0xFFF6F6F6),
+                              borderRadius: BorderRadius.all(Radius.circular(50)),
+                            ),
+                            child: Center(
+                                child: Text('9.5',
+                                    style: select
+                                        ? GoogleFonts.oswald(
+                                        fontSize: 24,
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.white)
+                                        : GoogleFonts.oswald(
+                                        fontSize: 24,
+                                        fontWeight: FontWeight.bold))),
+                          ),
+                        ),
+                        // SizedBox(width: 15),
+                        InkWell(
+                          onTap: () {
+                            if (data = false) {
+                              data = true;
+                            } else {
+                              data = false;
+                            }
+                            setState(() => data = !data);
+                          },
+                          child: Container(
+                            height: 48,
+                            width: 48,
+                            decoration: BoxDecoration(
+                              color: data ? Colors.blue : Color(0xFFF6F6F6),
+                              borderRadius: BorderRadius.all(Radius.circular(50)),
+                            ),
+                            child: Center(
+                                child: Text('10',
+                                    style: data
+                                        ? GoogleFonts.oswald(
+                                        fontSize: 24,
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.white)
+                                        : GoogleFonts.oswald(
+                                        fontSize: 24,
+                                        fontWeight: FontWeight.bold))),
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: 25),
+                    Container(
+                      child: RaisedButton(
+                        onPressed: () {
+                          // Navigator.of(context).pushNamed(ShoppingScren.routeName);
+                        },
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(70.0)),
+                        padding: EdgeInsets.all(0.0),
+                        child: Ink(
+                          decoration: BoxDecoration(
+                              gradient: LinearGradient(
+                                colors: [
+                                  Color(0xff4EC1F5),
+                                  Color(0xff2971EB),
+                                ],
+                                begin: Alignment.topCenter,
+                                end: Alignment.bottomCenter,
+                              ),
+                              borderRadius: BorderRadius.circular(110.0)),
+                          child: Container(
+                            constraints: BoxConstraints(
+                                maxWidth: double.infinity, minHeight: 72.0),
+                            alignment: Alignment.center,
+                            child: Text("ADD TO CART",
+                                textAlign: TextAlign.center,
+                                style: GoogleFonts.oswald(
+                                    fontStyle: FontStyle.normal,
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: 24,
+                                    color: Colors.white)),
+                          ),
+                        ),
                       ),
                     ),
-                  ),
-                ),
-                SizedBox(width: 15),
-                Container(
-                  height: 32,
-                  width: 32,
-                  decoration: BoxDecoration(
-                    color: Color(0xFFFF9CD4),
-                    borderRadius: BorderRadius.all(Radius.circular(50)),
-                  ),
-                ),
-                SizedBox(width: 15),
-                Container(
-                  height: 32,
-                  width: 32,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.all(Radius.circular(50)),
-                      //boxShadow:[ BoxShadow(color: Colors.red, blurRadius: 9,),],
-                      border: Border.all(color: Colors.black)),
-                ),
-              ],
-            ),
-            SizedBox(
-              height: 15,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(left: 36),
-                  child: Text(
-                    "SIZE",
-                    style: GoogleFonts.oswald(
-                        fontSize: 18, fontWeight: FontWeight.bold),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(right: 36),
-                  child: Text(
-                    "Size Guide",
-                    style: GoogleFonts.roboto(
-                        fontSize: 14,
-                        fontWeight: FontWeight.bold,
-                        color: Color(0xFF2A74EB)),
-                  ),
-                ),
-              ],
-            ),
-            Padding(
-              padding: const EdgeInsets.only(left: 36, top: 5),
-              child: Row(
-                children: [
-                  InkWell(
-                    onTap: () {
-                      setState(() => pressAttention = !pressAttention);
-                    },
-                    child: Container(
-                      height: 48,
-                      width: 48,
-                      decoration: BoxDecoration(
-                        color: pressAttention ? Colors.blue : Color(0xFFF6F6F6),
-                        //  color: Color(0xFFF6F6F6),
-                        borderRadius: BorderRadius.all(Radius.circular(50)),
-                      ),
-                      child: Center(
-                          child: Text('8',
-                              style: pressAttention
-                                  ? GoogleFonts.oswald(
-                                      fontSize: 24,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.white)
-                                  : GoogleFonts.oswald(
-                                      fontSize: 24,
-                                      fontWeight: FontWeight.bold))),
+                    SizedBox(height: 25),
+                    TabBar(
+                      indicatorColor: Colors.transparent,
+                      controller: _tabController,
+                      labelColor: Colors.black,
+                      unselectedLabelColor: Colors.grey,
+                      // labelPadding: EdgeInsets.only(left: 25, right: 25),
+                      isScrollable: true,
+                      tabs: [
+                        Tab(
+                            child: Text("Product",
+                                style: GoogleFonts.oswald(
+                                    color: Colors.black,
+                                    fontSize: 18, fontWeight: FontWeight.normal))),
+
+                        Tab(
+                            child: Text("Specification",
+                                style: GoogleFonts.oswald(
+                                    fontSize: 18, fontWeight: FontWeight.normal))),
+
+                        Tab(
+                            child: Text("Review",
+                                style: GoogleFonts.oswald(
+                                    fontSize: 18, fontWeight: FontWeight.normal))),
+                      ],
                     ),
-                  ),
-                  SizedBox(width: 15),
-                  InkWell(
-                    onTap: () {
-                      setState(() => press = !press);
-                    },
-                    child: Container(
-                      height: 48,
-                      width: 48,
-                      decoration: BoxDecoration(
-                        color: press ? Colors.blue : Color(0xFFF6F6F6),
-                        //  color: Color(0xFFF6F6F6),
-                        borderRadius: BorderRadius.all(Radius.circular(50)),
+                    SizedBox(height: 10),
+                    Container(
+                      height: 192,
+                      //  width: 303,
+                      child: Column(
+                        children: [
+                          Text(
+                              "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rutrum volutpat massa, vitae mattis lectus placerat nec.",
+                              style: GoogleFonts.openSans(fontSize: 16)),
+                          Text(
+                              "- Sed vitae velit condimentum, molestie dolor quis, cursus nibh.",
+                              style: GoogleFonts.openSans(fontSize: 16)),
+                          Text(
+                              "- Nullam ut nibh tristique, mollis ligula ut, molestie ante.",
+                              style: GoogleFonts.openSans(fontSize: 16)),
+                        ],
                       ),
-                      child: Center(
-                          child: Text('8.5',
-                              style: press
-                                  ? GoogleFonts.oswald(
-                                      fontSize: 24,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.white)
-                                  : GoogleFonts.oswald(
-                                      fontSize: 24,
-                                      fontWeight: FontWeight.bold))),
-                    ),
-                  ),
-                  SizedBox(width: 15),
-                  InkWell(
-                    onTap: () {
-                      setState(() => Attention = !Attention);
-                    },
-                    child: Container(
-                      height: 48,
-                      width: 48,
-                      decoration: BoxDecoration(
-                        color: Attention ? Colors.blue : Color(0xFFF6F6F6),
-                        borderRadius: BorderRadius.all(Radius.circular(50)),
-                      ),
-                      child: Center(
-                          child: Text('9',
-                              style: Attention
-                                  ? GoogleFonts.oswald(
-                                      fontSize: 24,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.white)
-                                  : GoogleFonts.oswald(
-                                      fontSize: 24,
-                                      fontWeight: FontWeight.bold))),
-                    ),
-                  ),
-                  SizedBox(width: 15),
-                  InkWell(
-                    onTap: () {
-                      setState(() => select = !select);
-                    },
-                    child: Container(
-                      height: 48,
-                      width: 48,
-                      decoration: BoxDecoration(
-                        color: select ? Colors.blue : Color(0xFFF6F6F6),
-                        borderRadius: BorderRadius.all(Radius.circular(50)),
-                      ),
-                      child: Center(
-                          child: Text('9.5',
-                              style: select
-                                  ? GoogleFonts.oswald(
-                                      fontSize: 24,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.white)
-                                  : GoogleFonts.oswald(
-                                      fontSize: 24,
-                                      fontWeight: FontWeight.bold))),
-                    ),
-                  ),
-                  SizedBox(width: 15),
-                  InkWell(
-                    onTap: () {
-                      if (data = false) {
-                        data = true;
-                      } else {
-                        data = false;
-                      }
-                      setState(() => data = !data);
-                    },
-                    child: Container(
-                      height: 48,
-                      width: 48,
-                      decoration: BoxDecoration(
-                        color: data ? Colors.blue : Color(0xFFF6F6F6),
-                        borderRadius: BorderRadius.all(Radius.circular(50)),
-                      ),
-                      child: Center(
-                          child: Text('10',
-                              style: data
-                                  ? GoogleFonts.oswald(
-                                      fontSize: 24,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.white)
-                                  : GoogleFonts.oswald(
-                                      fontSize: 24,
-                                      fontWeight: FontWeight.bold))),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            SizedBox(height: 25),
-            Container(
-              height: 72,
-              width: 303,
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  colors: [
-                    Color(0xFF2971EB),
-                    Color(0xFF4EC1F5),
+                    )
                   ],
-                  begin: Alignment.bottomRight,
-                  end: Alignment.bottomLeft,
-                ),
-                borderRadius: BorderRadius.all(Radius.circular(80.0)),
-              ),
-              child: InkWell(
-                onTap: () {},
-                child: Center(
-                  child: Text(
-                    'ADD TO CART',
-                    style: GoogleFonts.openSans(
-                        fontSize: 24,
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold),
-                  ),
                 ),
               ),
             ),
-            SizedBox(height: 25),
-            TabBar(
-              indicatorColor: Colors.transparent,
-              controller: _tabController,
-              labelColor: Colors.black,
-              unselectedLabelColor: Colors.grey,
-              labelPadding: EdgeInsets.only(left: 36, right: 36),
-              isScrollable: true,
-              tabs: [
-                Tab(
-                    child: Text("Product",
-                        style: GoogleFonts.oswald(
-                            fontSize: 18, fontWeight: FontWeight.normal))),
-                Tab(
-                    child: Text("Specification",
-                        style: GoogleFonts.oswald(
-                            fontSize: 18, fontWeight: FontWeight.normal))),
-                Tab(
-                    child: Text("Review",
-                        style: GoogleFonts.oswald(
-                            fontSize: 18, fontWeight: FontWeight.normal))),
-              ],
-            ),
-            SizedBox(height: 10),
-            Container(
-              height: 192,
-              //  width: 303,
-              child: Column(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(left: 36, right: 36),
-                    child: Text(
-                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rutrum volutpat massa, vitae mattis lectus placerat nec.",
-                        style: GoogleFonts.openSans(fontSize: 16)),
-                  ),
-                  Padding(
-                    padding:
-                        const EdgeInsets.only(left: 36, right: 36, top: 10),
-                    child: Text(
-                        "- Sed vitae velit condimentum, molestie dolor quis, cursus nibh.",
-                        style: GoogleFonts.openSans(fontSize: 16)),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 36, right: 36),
-                    child: Text(
-                        "- Nullam ut nibh tristique, mollis ligula ut, molestie ante.",
-                        style: GoogleFonts.openSans(fontSize: 16)),
-                  ),
-                ],
-              ),
-            )
+
           ],
         ),
       ),

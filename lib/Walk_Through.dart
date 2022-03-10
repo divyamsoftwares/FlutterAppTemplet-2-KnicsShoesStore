@@ -17,6 +17,7 @@ class _WalkThroughScreenState extends State<WalkThroughScreen> {
     return Scaffold(
         body: SingleChildScrollView(
           child: Container(
+
             height: MediaQuery.of(context).size.height * 1,
             width: MediaQuery.of(context).size.width * 1,
             decoration: BoxDecoration(
@@ -25,13 +26,14 @@ class _WalkThroughScreenState extends State<WalkThroughScreen> {
                       end: Alignment.bottomCenter,
                       colors: [Colors.white, Colors.white, Colors.black])),
             child: SingleChildScrollView(
-              child: Padding(
-                padding: const EdgeInsets.only(left: 40),
-                child: Column(
-                  children: [
-                    Container(height: 500,),
-                    Row(
+              child: Column(
+                children: [
+                  Container(height: 500,),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 40),
+                    child: Row(
                       children: [
+                        SizedBox(height: 50),
                         Text(
                           'LET\'S IMPROVE\nYOUR APPEARANCE',
                           style: GoogleFonts.oswald(
@@ -45,52 +47,64 @@ class _WalkThroughScreenState extends State<WalkThroughScreen> {
                         ),
                       ],
                     ),
-                    SizedBox(height: 20),
-                    Text(
+                  ),
+                  SizedBox(height: 20),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 40,right: 15),
+                    child: Text(
                       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rutrum volutpat massa, vitae mattis lectus placerat nec.',
+
                       style: GoogleFonts.openSans(
                           fontStyle: FontStyle.normal,
+
                           fontSize: 16,
                           fontWeight: FontWeight.w400,
                           color: Color(0XFFF2F2F2)),
                       overflow: TextOverflow.clip,
                     ),
-                    SizedBox(height: 30),
-                    Container(
-                      height: 72.0,
-
+                  ),
+                  SizedBox(height: 30),
+                  Center(
+                    child: Container(
                       child: RaisedButton(
                         onPressed: () {
-                          Navigator.of(context).pushNamed(LoginScreen.routeName);
+                         Navigator.of(context).pushNamed(LoginScreen.routeName);
                         },
-                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(80.0)),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(70.0)),
                         padding: EdgeInsets.all(0.0),
                         child: Ink(
                           decoration: BoxDecoration(
-                              gradient: LinearGradient(colors: [Color(0xff4EC1F5),Color(0xff2971EB), ],
+                              gradient: LinearGradient(
+                                colors: [
+                                  Color(0xff4EC1F5),
+                                  Color(0xff2971EB),
+                                ],
                                 begin: Alignment.topCenter,
                                 end: Alignment.bottomCenter,
-
                               ),
-                              borderRadius: BorderRadius.circular(30.0)
-                          ),
+                              borderRadius: BorderRadius.circular(110.0)),
                           child: Container(
-                            constraints: BoxConstraints(maxWidth: 304.0, minHeight: 50.0),
+                            constraints: BoxConstraints(
+                                maxWidth: 324.0, minHeight: 72.0),
                             alignment: Alignment.center,
-                            child: Text(
-                              "GET STARTED",
-                              textAlign: TextAlign.center,
-                              style: GoogleFonts.oswald(fontStyle: FontStyle.normal,fontWeight: FontWeight.w500,fontSize: 24,color: Colors.white)
-                            ),
+                            child: Text("Get Started",
+                                textAlign: TextAlign.center,
+                                style: GoogleFonts.oswald(
+                                    fontStyle: FontStyle.normal,
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: 24,
+                                    color: Colors.white)),
                           ),
                         ),
                       ),
                     ),
+                  ),
+                  SizedBox(height: 20),
 
 
 
-                  ],
-                ),
+                ],
               ),
             ),
           ),
